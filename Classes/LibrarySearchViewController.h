@@ -20,4 +20,6 @@
 
 }
 
+- (NSArray *)booksInDocuments;
+
 @end

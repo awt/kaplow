@@ -24,6 +24,10 @@
     [super dealloc];
 }
 
+- (NSArray *)booksInDocuments {
+  
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
