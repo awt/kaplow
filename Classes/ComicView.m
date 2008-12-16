@@ -23,8 +23,8 @@
     currentFrameIndex = 0;
     imageView = nil;
     bookName = [theBookName retain];
-    NSString *documentsDirectory = [NSString documentsDirectory];
-    NSString *bookPath = [[NSString pathWithComponents:[NSArray arrayWithObjects:documentsDirectory,theBookName,@"pages", nil]] stringByAppendingPathExtension:@"yml"];
+    NSString *booksDirectory = [NSString booksDirectory];
+    NSString *bookPath = [[NSString pathWithComponents:[NSArray arrayWithObjects:booksDirectory,theBookName,@"pages", nil]] stringByAppendingPathExtension:@"yml"];
     NSString *bookFileContent = [NSString stringWithContentsOfFile:bookPath encoding:NSUTF8StringEncoding error:NULL]; 
 
     id data = yaml_parse(bookFileContent);

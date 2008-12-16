@@ -9,7 +9,7 @@
 #import "LibrarySearchViewController.h"
 #import "Comic_ReaderAppDelegate.h"
 #import "ComicViewController.h"
-
+#import "Utils.h"
 
 @implementation LibrarySearchViewController
 
@@ -25,13 +25,16 @@
 }
 
 - (NSArray *)booksInDocuments {
-  
+  NSString *booksDirectory = [NSString booksDirectory];  
+  NSLog(@"booksDirectory: @s", booksDirectory);
+  return [[NSFileManager defaultManager] directoryContentsAtPath: booksDirectory];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    books = [[NSArray arrayWithObjects:@"shade", @"y-men", @"the purple flashlight", nil] retain];
+    books = [[self booksInDocuments] retain];
+    //books = [[NSArray arrayWithObjects:@"shade", @"y-men", @"the purple flashlight", nil] retain];
 
     // create our filtered list that will be the data source of our table, start its content from the master "books"
     filteredListContent = [[NSMutableArray alloc] initWithCapacity: [books count]];

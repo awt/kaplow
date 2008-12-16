@@ -99,18 +99,17 @@ tartype_t gztype = { (openfunc_t) gzopen_frontend, (closefunc_t) gzclose,
 {
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
     NSString *documentsDirectory = [NSString documentsDirectory];
-    if (!documentsDirectory) {
-        NSLog(@"Documents directory not found!");
-        return NO;
-    }
+    NSString *booksDirectory = [NSString booksDirectory];
+
 
     NSString *tarball = [documentsDirectory stringByAppendingPathComponent:@"shade.tar.gz"];
     [receivedData writeToFile:tarball atomically:YES];
+
     
     TAR *t = NULL; 
     int tar_open_result = tar_open(&t, [tarball UTF8String], &gztype, O_RDONLY, 0644, 0);
 
-    int tar_extract_result = tar_extract_all(t, [documentsDirectory UTF8String]);
+    int tar_extract_result = tar_extract_all(t, [booksDirectory UTF8String]);
     tar_close(t);
 
     [connection release];
