@@ -13,125 +13,131 @@
 
 @implementation LibrarySearchViewController
 
+- (void)dealloc {
+    [myTableView release];
+    [mySearchBar release];
+    
+    [filteredListContent release];
+    [savedContent release];
+    
+    [books release];
+    [super dealloc];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    books = [[NSArray arrayWithObjects:@"shade", @"y-men", @"the purple flashlight", nil] retain];
+
+    // create our filtered list that will be the data source of our table, start its content from the master "books"
+    filteredListContent = [[NSMutableArray alloc] initWithCapacity: [books count]];
+    [filteredListContent addObjectsFromArray: books];
+    
+    // this stored the current list in case the user cancels the filtering
+    savedContent = [[NSMutableArray alloc] initWithCapacity: [books count]]; 
+            
+    // don't get in the way of user typing
+    mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    mySearchBar.showsCancelButton = NO;
 
     self.title = NSLocalizedString(@"My Library", @"Master view navigation title");
-    books = [[NSArray arrayWithObjects:@"shade", @"y-men", @"the purple flashlight", nil] retain];
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [books count];
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [filteredListContent count];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (cell == nil)
+    {
+      cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"cellID"] autorelease];
+      cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    // Set up the cell
-    cell.text = [books objectAtIndex:[indexPath indexAtPosition:0]];
+    cell.text = [filteredListContent objectAtIndex:indexPath.row];
+    
     return cell;
+    
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ComicViewController *comicViewController = [[ComicViewController alloc] initWithBookName:[books objectAtIndex:[indexPath indexAtPosition:0]]];    
+    ComicViewController *comicViewController = [[ComicViewController alloc] initWithBookName:[filteredListContent objectAtIndex:indexPath.row]];    
     [[self navigationController] pushViewController:comicViewController animated:YES];
     [comicViewController release];
 }
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+	// only show the status bar's cancel button while in edit mode
+	mySearchBar.showsCancelButton = YES;
+	
+	// flush and save the current list content in case the user cancels the search later
+	[savedContent removeAllObjects];
+	[savedContent addObjectsFromArray: filteredListContent];
 }
-*/
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+	mySearchBar.showsCancelButton = NO;
 }
-*/
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+	[filteredListContent removeAllObjects];	// clear the filtered array first
+	
+	// search the table content for cell titles that match "searchText"
+	// if found add to the mutable array and force the table to reload
+	//
+	NSString *cellTitle;
+	for (cellTitle in books)
+	{
+		NSComparisonResult result = [cellTitle compare:searchText options:NSCaseInsensitiveSearch
+										range:NSMakeRange(0, [searchText length])];
+		if (result == NSOrderedSame)
+		{
+			[filteredListContent addObject:cellTitle];
+		}
+	}
+	
+	[myTableView reloadData];
 }
-*/
 
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+// called when cancel button pressed
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	// if a valid search was entered but the user wanted to cancel, bring back the saved list content
+	if (searchBar.text.length > 0)
+	{
+		[filteredListContent removeAllObjects];
+		[filteredListContent addObjectsFromArray: savedContent];
+	}
+	
+	[myTableView reloadData];
+	
+	[searchBar resignFirstResponder];
+	searchBar.text = @"";
 }
-*/
 
-
-- (void)dealloc {
-    [books release];
-    [super dealloc];
+// called when Search (in our case "Done") button pressed
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
 }
 
 
