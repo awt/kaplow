@@ -26,7 +26,6 @@
 
 - (NSArray *)booksInDocuments {
   NSString *booksDirectory = [NSString booksDirectory];  
-  NSLog(@"booksDirectory: @s", booksDirectory);
   return [[NSFileManager defaultManager] directoryContentsAtPath: booksDirectory];
 }
 
