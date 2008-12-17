@@ -27,6 +27,7 @@
 		8E7695440EE32E4B0046ED5C /* GSNSDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7695430EE32E4B0046ED5C /* GSNSDataExtensions.m */; };
 		8E7695680EE331CB0046ED5C /* libsyck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7695670EE331CB0046ED5C /* libsyck.a */; };
 		8EC146D30EF729BA00E82488 /* LibrarySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */; };
+		8EC147460EF983D500E82488 /* CatalogSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC147450EF983D500E82488 /* CatalogSearchViewController.m */; };
 		8EF6985E0ED8DB8F00E798B0 /* ComicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		8E7695670EE331CB0046ED5C /* libsyck.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsyck.a; sourceTree = "<group>"; };
 		8EC146D10EF729BA00E82488 /* LibrarySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibrarySearchViewController.h; sourceTree = "<group>"; };
 		8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibrarySearchViewController.m; sourceTree = "<group>"; };
+		8EC147440EF983D500E82488 /* CatalogSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogSearchViewController.h; sourceTree = "<group>"; };
+		8EC147450EF983D500E82488 /* CatalogSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogSearchViewController.m; sourceTree = "<group>"; };
 		8EF6985C0ED8DB8F00E798B0 /* ComicFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicFrame.h; sourceTree = "<group>"; };
 		8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +93,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8EC147440EF983D500E82488 /* CatalogSearchViewController.h */,
+				8EC147450EF983D500E82488 /* CatalogSearchViewController.m */,
 				8EC146D10EF729BA00E82488 /* LibrarySearchViewController.h */,
 				8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */,
 				8E2486AB0EECE8CE00B6D74B /* Utils.h */,
@@ -243,6 +248,7 @@
 				8E7695440EE32E4B0046ED5C /* GSNSDataExtensions.m in Sources */,
 				8E2486AA0EECE8C000B6D74B /* Utils.m in Sources */,
 				8EC146D30EF729BA00E82488 /* LibrarySearchViewController.m in Sources */,
+				8EC147460EF983D500E82488 /* CatalogSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
