@@ -1,18 +1,16 @@
 //
-//  CatalogItemViewController.m
+//  PurchaseFormViewController.m
 //  Comic Reader
 //
 //  Created by Adam Thorsen on 12/17/08.
 //  Copyright 2008 Owyhee Software, LLC. All rights reserved.
 //
 
-#import "CatalogItemViewController.h"
 #import "PurchaseFormViewController.h"
 
-@implementation CatalogItemViewController
 
+@implementation PurchaseFormViewController
 
-//The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withBookName:(NSString *)theBookName {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         //Custom initialization
@@ -21,32 +19,18 @@
     return self;
 }
 
-
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 }
 */
 
-
+/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
-- (void)buyBook
-{
-  NSLog(@"buy book!!");
-  PurchaseFormViewController *purchaseFormViewController = [[PurchaseFormViewController alloc] initWithNibName:@"PurchaseFormViewController" 
-                                                                                              bundle:nil 
-                                                                                              withBookName:bookName];    
-
-  [[self navigationController] pushViewController:purchaseFormViewController animated:YES];
-  [purchaseFormViewController release];
-	// the add button was clicked, handle it here
-	//
-}
-
+*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

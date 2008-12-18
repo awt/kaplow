@@ -913,9 +913,9 @@
 	};
 	8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 924}}";
-			sepNavSelRange = "{1526, 0}";
-			sepNavVisRange = "{346, 635}";
+			sepNavIntBoundsRect = "{{0, 0}, {852, 1104}}";
+			sepNavSelRange = "{2068, 0}";
+			sepNavVisRange = "{1219, 304}";
 		};
 	};
 	8EC1480C0EF9D6D100E82488 /* PBXTextBookmark */ = {
@@ -937,6 +937,20 @@
 		rType = 0;
 		vrLen = 255;
 		vrLoc = 0;
+	};
+	8EC148380EFA35EF00E82488 /* PurchaseFormViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 357}}";
+			sepNavSelRange = "{398, 0}";
+			sepNavVisRange = "{0, 398}";
+		};
+	};
+	8EC148390EFA35EF00E82488 /* PurchaseFormViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 770}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 647}";
+		};
 	};
 	8ED423740EF6DAB3009BE936 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

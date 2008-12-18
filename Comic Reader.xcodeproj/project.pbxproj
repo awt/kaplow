@@ -31,6 +31,8 @@
 		8EC148040EF9D4C200E82488 /* CatalogItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */; };
 		8EC148060EF9D6C100E82488 /* CatalogItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */; };
 		8EC1482C0EFA228A00E82488 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EC1482B0EFA228A00E82488 /* cover.png */; };
+		8EC148330EFA336400E82488 /* PurchaseFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC148320EFA336400E82488 /* PurchaseFormViewController.xib */; };
+		8EC1483A0EFA35EF00E82488 /* PurchaseFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC148390EFA35EF00E82488 /* PurchaseFormViewController.m */; };
 		8EF6985E0ED8DB8F00E798B0 /* ComicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,9 @@
 		8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItemViewController.m; sourceTree = "<group>"; };
 		8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CatalogItemViewController.xib; path = Classes/CatalogItemViewController.xib; sourceTree = "<group>"; };
 		8EC1482B0EFA228A00E82488 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
+		8EC148320EFA336400E82488 /* PurchaseFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseFormViewController.xib; sourceTree = "<group>"; };
+		8EC148380EFA35EF00E82488 /* PurchaseFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurchaseFormViewController.h; path = ../PurchaseFormViewController.h; sourceTree = "<group>"; };
+		8EC148390EFA35EF00E82488 /* PurchaseFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurchaseFormViewController.m; path = ../PurchaseFormViewController.m; sourceTree = "<group>"; };
 		8EF6985C0ED8DB8F00E798B0 /* ComicFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicFrame.h; sourceTree = "<group>"; };
 		8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +131,8 @@
 				8E5B7AC90EC7D2C10053951F /* ComicView.h */,
 				8E5B7ACA0EC7D2C10053951F /* ComicView.m */,
 				8EF6985C0ED8DB8F00E798B0 /* ComicFrame.h */,
+				8EC148380EFA35EF00E82488 /* PurchaseFormViewController.h */,
+				8EC148390EFA35EF00E82488 /* PurchaseFormViewController.m */,
 				8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */,
 			);
 			path = Classes;
@@ -170,6 +177,7 @@
 				8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8EC148320EFA336400E82488 /* PurchaseFormViewController.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			name = Resources;
@@ -239,6 +247,7 @@
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
 				8EC148060EF9D6C100E82488 /* CatalogItemViewController.xib in Resources */,
 				8EC1482C0EFA228A00E82488 /* cover.png in Resources */,
+				8EC148330EFA336400E82488 /* PurchaseFormViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +272,7 @@
 				8EC146D30EF729BA00E82488 /* LibrarySearchViewController.m in Sources */,
 				8EC147460EF983D500E82488 /* CatalogSearchViewController.m in Sources */,
 				8EC148040EF9D4C200E82488 /* CatalogItemViewController.m in Sources */,
+				8EC1483A0EFA35EF00E82488 /* PurchaseFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
