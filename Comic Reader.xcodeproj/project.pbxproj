@@ -28,6 +28,8 @@
 		8E7695680EE331CB0046ED5C /* libsyck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7695670EE331CB0046ED5C /* libsyck.a */; };
 		8EC146D30EF729BA00E82488 /* LibrarySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */; };
 		8EC147460EF983D500E82488 /* CatalogSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC147450EF983D500E82488 /* CatalogSearchViewController.m */; };
+		8EC148040EF9D4C200E82488 /* CatalogItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */; };
+		8EC148060EF9D6C100E82488 /* CatalogItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */; };
 		8EF6985E0ED8DB8F00E798B0 /* ComicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,9 @@
 		8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibrarySearchViewController.m; sourceTree = "<group>"; };
 		8EC147440EF983D500E82488 /* CatalogSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogSearchViewController.h; sourceTree = "<group>"; };
 		8EC147450EF983D500E82488 /* CatalogSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogSearchViewController.m; sourceTree = "<group>"; };
+		8EC148020EF9D4C200E82488 /* CatalogItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogItemViewController.h; sourceTree = "<group>"; };
+		8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItemViewController.m; sourceTree = "<group>"; };
+		8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CatalogItemViewController.xib; path = Classes/CatalogItemViewController.xib; sourceTree = "<group>"; };
 		8EF6985C0ED8DB8F00E798B0 /* ComicFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicFrame.h; sourceTree = "<group>"; };
 		8EF6985D0ED8DB8F00E798B0 /* ComicFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +104,8 @@
 				8EC146D20EF729BA00E82488 /* LibrarySearchViewController.m */,
 				8E2486AB0EECE8CE00B6D74B /* Utils.h */,
 				8E2486A90EECE8C000B6D74B /* Utils.m */,
+				8EC148020EF9D4C200E82488 /* CatalogItemViewController.h */,
+				8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */,
 				8E7695420EE32E4B0046ED5C /* GSNSDataExtensions.h */,
 				8E7695430EE32E4B0046ED5C /* GSNSDataExtensions.m */,
 				8E7694AF0EE329F60046ED5C /* SyckInput.m */,
@@ -157,6 +164,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8EC148050EF9D6C100E82488 /* CatalogItemViewController.xib */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -226,6 +234,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				8EC148060EF9D6C100E82488 /* CatalogItemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +258,7 @@
 				8E2486AA0EECE8C000B6D74B /* Utils.m in Sources */,
 				8EC146D30EF729BA00E82488 /* LibrarySearchViewController.m in Sources */,
 				8EC147460EF983D500E82488 /* CatalogSearchViewController.m in Sources */,
+				8EC148040EF9D4C200E82488 /* CatalogItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "CatalogSearchViewController.h"
-
+#import "CatalogItemViewController.h"
 
 @implementation CatalogSearchViewController
 
@@ -39,7 +39,7 @@
     mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     mySearchBar.showsCancelButton = NO;
 
-    self.title = NSLocalizedString(@"My Library", @"Master view navigation title");
+    self.title = NSLocalizedString(@"Online Catalog", @"Master view navigation title");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -70,9 +70,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //ComicViewController *comicViewController = [[ComicViewController alloc] initWithBookName:[filteredListContent objectAtIndex:indexPath.row]];    
-    //[[self navigationController] pushViewController:comicViewController animated:YES];
-    //[comicViewController release];
+    CatalogItemViewController *catalogItemViewController = [[CatalogItemViewController alloc] initWithNibName:@"CatalogItemViewController" 
+                                                                                              bundle:nil 
+                                                                                              withBookName:[filteredListContent objectAtIndex:indexPath.row]];    
+    [[self navigationController] pushViewController:catalogItemViewController animated:YES];
+    [catalogItemViewController release];
 }
 
 - (void)didReceiveMemoryWarning {
