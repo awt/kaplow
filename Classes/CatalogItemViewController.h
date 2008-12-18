@@ -10,6 +10,7 @@
 
 
 @interface CatalogItemViewController : UIViewController {
+  IBOutlet UIButton *buyButton;
   NSString *bookName;
 }
 

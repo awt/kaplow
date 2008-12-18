@@ -911,6 +911,13 @@
 			sepNavVisRange = "{0, 255}";
 		};
 	};
+	8EC148030EF9D4C200E82488 /* CatalogItemViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 924}}";
+			sepNavSelRange = "{1526, 0}";
+			sepNavVisRange = "{346, 635}";
+		};
+	};
 	8EC1480C0EF9D6D100E82488 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 8EC148020EF9D4C200E82488 /* CatalogItemViewController.h */;
